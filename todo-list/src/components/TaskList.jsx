@@ -5,11 +5,19 @@ function TaskList(props) {
                 <p>No tasks</p>
             ) : (
                 props.tasks.map((task, index) => {
-                    <li key={index}>
-                        <input type="checkbox" checked={task.completed} />
-                        {task.text}
-                        <button>Delete</button>
-                    </li>;
+                    return (
+                        <li key={index} style={{textDecoration: task.completed ? 'line-through' : 'none'}} >
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    checked={task.completed}
+                                    onChange={() => props.handleToggleComplete(index)}
+                                />
+                                {task.text}
+                            </div>
+                            <button onClick={() => props.handleDeleteTask(index)} >Delete</button>
+                        </li>
+                    );
                 })
             )}
         </ul>

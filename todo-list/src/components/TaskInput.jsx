@@ -1,8 +1,13 @@
 function TaskInput(props) {
     return (
-        <div>
-            <input type="text" placeholder="Enter a new task..." />
-            <button>Add task</button>
+        <div className="taskInput_container">
+            <input
+                type="text"
+                value={props.newTask}
+                onChange={(e) => props.setNewTask(e.target.value)}
+                placeholder="Enter a new task..."
+            />
+            <button onClick={props.handleAddTask}>Add task</button>
         </div>
     );
 }
