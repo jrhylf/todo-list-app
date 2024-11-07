@@ -5,7 +5,8 @@
 }
 
 .App {
-  max-height: 100vh;
+  height: 100vh;
+  max-height: max-content;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -16,7 +17,7 @@
 }
 
 .taskList {
-  max-height: 700px;
+  max-height: 600px;
   overflow-x: auto;
 }
 
